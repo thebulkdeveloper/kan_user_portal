@@ -1,0 +1,28 @@
+<div class="table-responsive">
+  <h2 style="text-align: center"> <u>USER ID'S</u></h2>
+    <table class="table table-striped">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Username</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="userData && userData.length>0">
+        <tr *ngFor="let data of userData">
+          <td>{{data.username}}</td>
+          <td>{{data.cal_amount}}</td>
+          <td *ngIf="data.status==='Pending'" style="color:red;">{{data.status}}</td>
+          <td *ngIf="data.status==='Approved'" style="color: green;">{{data.status}}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-primary" (click)="openDialog(data)"><i class="bi bi-eye"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  

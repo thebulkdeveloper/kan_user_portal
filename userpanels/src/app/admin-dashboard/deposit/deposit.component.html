@@ -1,0 +1,29 @@
+<h2 style="text-align: center"> <u>USER REQUESTS</u></h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Username</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Request Type</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="userDepositData && userDepositData.length>0" >
+        <tr *ngFor="let data of userDepositData">
+          <td>{{data.username}}</td>
+          <td>{{data.amount}}</td>
+          <td>{{data.transaction_type}}</td>
+          <td style="color:red;">Pending</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-primary" (click)="openDialog(data)"><i class="bi bi-eye"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  

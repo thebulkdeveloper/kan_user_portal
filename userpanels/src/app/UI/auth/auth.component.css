@@ -1,0 +1,53 @@
+.card {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .form-group label {
+    color: #fff;
+  }
+  
+  .btn-primary {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ffcc33;
+    border-color: #ffcc33;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.5);
+  }
+  
+  .btn-primary:active {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+  }
+  
+  .text-center a {
+    color: #ffcc00;
+  }
+  
+  .text-center a:hover {
+    color: #ffcc33;
+  }
+
+  a{
+    cursor: pointer;
+  }
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  /* Disable increment and decrement arrows for Firefox */
+  -moz-appearance: textfield;
+}

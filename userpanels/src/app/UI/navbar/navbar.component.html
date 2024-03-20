@@ -1,0 +1,57 @@
+<ng-container *ngIf="isHomeRoute(); else otherRoutes">
+  <div class="nav-1">
+    <button class="toggle-button" (click)="toggleSidebar()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <app-sidebar *ngIf="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-sidebar>
+    <ng-container *ngIf="isLoggedIn; else loginButton">
+    </ng-container>
+    <ng-template #loginButton>
+        <a routerLink="login" class="login-button">
+            <button type="button" class="btn btn-outline-light btn-sm">Login|Signup</button>
+        </a>
+    </ng-template>
+  
+    <div class="cards-container">
+        <div class="card left">
+            <i class="bi bi-cash light"></i>
+            Deposit
+        </div>
+        <div class="card middle">
+            <i class="bi bi-wallet2"></i>
+            Wallet
+        </div>
+        <div class="card right">
+            <i class="bi bi-bank"></i>
+            Withdraw
+        </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #otherRoutes>
+  <div class="nav-2">
+    
+      <div>
+        <button class="toggle-button" (click)="toggleSidebar()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </button>
+         <app-sidebar *ngIf="isSidebarOpen" (toggleSidebar)="toggleSidebar()"></app-sidebar>
+      </div>
+
+      <div class="routeName">
+        <h2> {{getCurrentRouteName() | slice:1 | uppercase}}</h2>
+      </div>
+
+      <div class="Notification">
+        <span *ngIf="isLoggedIn">
+          <i class="bi bi-bell fs-5" (click)="openDialog()"></i>  
+        </span>
+        <span *ngIf="!isLoggedIn"></span>
+      </div>
+  </div>
+</ng-template>

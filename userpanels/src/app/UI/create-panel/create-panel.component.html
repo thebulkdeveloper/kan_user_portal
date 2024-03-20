@@ -1,0 +1,31 @@
+<app-special-header [title]="title"></app-special-header>
+
+<div class="container-fluid">
+  <div class="content">
+    <img src="{{panelData.imageurl}}" alt="Image" class="image">
+    <h2 class="title">{{panelData.title}}</h2>
+    <a class="url">{{panelData.exchange_url}}</a>
+  </div>
+</div>
+
+<div class="main">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="p-4 text-light">
+
+    <div class="mb-3">
+      <label for="preferredUserName" class="form-label">Preferred User Name:</label>
+      <input type="text" id="preferredUserName" formControlName="username" class="form-control">
+      <div *ngIf="isFieldInvalid('username')" class="text-danger">Username is required.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="amount" class="form-label">Amount:</label>
+      <input type="text" id="amount" formControlName="amount" class="form-control" readonly>
+    </div>
+
+  </form>
+  <div class="mb-3 d-flex justify-content-center bg-dark p-3">
+    <button type="submit" class="btn btn-lg btn-warning mx-2 mt-2" (click)="addToCart()">Add to Cart</button>
+    <button type="button" (click)="onSubmit()" class="btn btn-lg btn-success mt-2">Buy Now</button>
+  </div>
+  
+</div>

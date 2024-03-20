@@ -1,0 +1,28 @@
+img{
+    height: 50px;
+    width: 50px;
+}
+
+#cardlist{
+    list-style-type: none;
+    margin-top: -4px;
+    margin-left: -20px;
+}
+
+.card-content{
+    height: 50px;
+}
+
+.card{
+    background-color: #343A40;
+    color: white;
+    bottom: 5px;
+}
+
+.createBtn{
+    background-color: #FFB90C;
+
+}
+
+
+

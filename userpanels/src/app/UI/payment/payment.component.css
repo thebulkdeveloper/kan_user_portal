@@ -1,0 +1,54 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    background-color:black;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px 0;
+  }
+  
+  .bank-details,
+  .payment-upload,
+  .submit-button {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bank-details h2,
+  .payment-upload h2 {
+    margin-bottom: 10px;
+  }
+  
+  .submit-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 24px;
+    }
+  }

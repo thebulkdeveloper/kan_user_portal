@@ -1,0 +1,49 @@
+#totalCalculatedAmount{
+    border: none;
+    background-color:#343A40;
+    font-size: large;
+    color: white;
+}
+
+form{
+    background-color: #343A40;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: black;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .image {
+    margin-top: 10px;
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+  }
+  
+  .title {
+    margin: 10px 0;
+    color: white;
+  }
+  
+  .url {
+    display: block;
+    margin-top: -10px; /* Adjust as needed */
+    color: coral;
+  }
+  
+  /* Media queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    .container {
+      display: grid;
+      height: auto;
+      place-items: center;
+    }
+  }
+  

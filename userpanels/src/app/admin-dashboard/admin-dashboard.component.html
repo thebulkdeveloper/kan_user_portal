@@ -1,0 +1,67 @@
+<nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+    <a class="navbar-brand mx-4" href="#">Dashboard</a>
+  </nav>
+   <div id="sidebar">
+    <ul class="nav flex-column">
+    
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/admin-dashboard">
+          <i class="bi bi-house-door-fill mr-2"></i> Home
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="myprofile">
+          <i class="bi bi-person mx-1"></i> Profile
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="listing">
+          <i class="bi bi-plus"></i> List Panel
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="user-panels">
+          <i class="bi bi-bar-chart-line-fill mx-1"></i>ID's
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="allusers">
+          <i class="bi bi-person-check-fill mx-1"></i>All Users
+        </a>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="deposit">
+          <i class="bi bi-cash mx-1"></i>User Request
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="add-bank">
+          <i class="bi bi-bank mx-1"></i>Add Bank
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="view-bank">
+          <i class="bi bi-person-vcard-fill mx-1"></i>Bank Accounts
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" (click)="logOut()">
+          <i class="bi bi-box-arrow-left mx-1"></i>Logout
+        </a>
+      </li>
+    </ul>
+   </div>
+  <!-- Main Content -->
+  <div id="content">
+    <br><br>
+    <div class="container-fluid">
+         <router-outlet></router-outlet>
+    </div>
+  </div>

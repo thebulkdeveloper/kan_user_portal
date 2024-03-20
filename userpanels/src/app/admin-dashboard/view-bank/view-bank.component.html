@@ -1,0 +1,36 @@
+<div class="table-responsive">
+    <h2 style="text-align: center"> <u>Bank Account Details</u></h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Bank Name</th>
+          <th scope="col">Account Number</th>
+          <th scope="col">IFSC Code</th>
+          <th scope="col">UPI ID</th>
+          <th scope="col">Account Type</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="bankInfo && bankInfo.length>0">
+        <tr *ngFor="let bank of bankInfo">
+          <td>
+            <span *ngIf="bank.name==null">
+                Master
+            </span>
+            <span *ngIf="bank.name!=null">
+              {{bank.name}}
+            </span>
+          </td>
+          <td>{{bank.bank_name}}</td>
+          <td>{{bank.acc_no}}</td>
+          <td>{{bank.ifsc_code}}</td>
+          <td>{{bank.upi_id}}</td>
+          <td>
+            <span *ngIf="bank.is_master==false">User Account</span>
+            <span *ngIf="bank.is_master==true">Admin Account</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

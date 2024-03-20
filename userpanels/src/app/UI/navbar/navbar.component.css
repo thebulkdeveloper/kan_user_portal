@@ -1,0 +1,114 @@
+.nav-1 {
+    height: 200px; 
+    background-color:#FFB90C;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .nav-2 {
+    height: 50px; 
+    background-color:#FFB90C;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .routeName h2{
+     margin-top: 10px;
+  }
+
+  .Notification{
+    margin-right: 20px;
+    margin-top: 18px;
+  }
+
+  .menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .login-button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .profile-button{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+  }
+
+.cards-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background-color: #343a40; 
+    color: #fff; 
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 2px;
+}
+
+.card.middle {
+    height: 100px;
+    width: 140px;
+    
+}
+
+.toggle-button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: fit-content;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+  /* Media queries for responsiveness */
+  @media only screen and (max-width: 768px) {
+    .nav-1 {
+      height: 200px; 
+    }
+    .menu-icon {
+      top: 10px;
+      left: 10px;
+    }
+    .login-button {
+      top: 10px;
+      right: 10px;
+    }
+  }
+

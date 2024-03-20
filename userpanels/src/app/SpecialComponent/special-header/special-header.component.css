@@ -1,0 +1,10 @@
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+  }
+
+.navbar{
+     height:40px;
+  }

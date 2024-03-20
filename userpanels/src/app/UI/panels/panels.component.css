@@ -1,0 +1,66 @@
+.tabs {
+    height: 40px;
+    background-color: #343A40;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .tabs button {
+    padding: 10px;
+    width:250px;
+    color: white;
+    border: none;
+    background-color: #343A40;
+
+  }
+  
+  .tabs button.active {
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .tabs button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    background-color: red;
+    box-shadow: 0 0 10px red;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"], select {
+    background-color: #343a40;
+    color: #ffffff;
+    border: 1px solid #6c757d;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 10px;
+  }
+  input[type="text"]::placeholder {
+    color: #adb5bd;
+  }
+  select {
+    padding: 6px;
+  }
+
+
+  .panel-components {
+    height:68vh;
+    overflow-y: auto;
+  }
+
+  .my-panel-component {
+    height:75vh;
+    overflow-y: auto;
+  }

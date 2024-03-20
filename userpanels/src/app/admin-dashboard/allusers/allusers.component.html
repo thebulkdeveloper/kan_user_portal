@@ -1,0 +1,21 @@
+<h2 style="text-align: center"> <u>ALL USERS</u></h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">Role</th>
+        <th scope="col">Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.mobile}}</td>
+        <td>{{user.role}}</td>
+        <td><button class="btn btn-sm btn-success">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>

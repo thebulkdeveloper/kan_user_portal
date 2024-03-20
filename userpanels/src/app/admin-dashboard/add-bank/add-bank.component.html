@@ -1,0 +1,34 @@
+<h2 style="text-align: center"> <u>ADD BANK</u></h2>
+<form [formGroup]="bankForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Enter Bank Name</label>
+      <input type="text" class="form-control" formControlName="bank_name">
+      <div *ngIf="bankForm.get('bank_name')?.invalid && (bankForm.get('bank_name')?.dirty || bankForm.get('bank_name')?.touched)" class="text-danger">
+        <div *ngIf="bankForm.get('bank_name')?.hasError('required')">Bank name is required.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Enter Account Number</label>
+      <input type="number" class="form-control" formControlName="acc_no">
+      <div *ngIf="bankForm.get('acc_no')?.invalid && (bankForm.get('acc_no')?.dirty || bankForm.get('acc_no')?.touched)" class="text-danger">
+        <div *ngIf="bankForm.get('acc_no')?.hasError('required')">Account number is required.</div>
+        <div *ngIf="bankForm.get('acc_no')?.hasError('pattern')">Please enter a valid account number.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Enter IFSC Code</label>
+      <input type="text" class="form-control" formControlName="ifsc_code">
+      <div *ngIf="bankForm.get('ifsc_code')?.invalid && (bankForm.get('ifsc_code')?.dirty || bankForm.get('ifsc_code')?.touched)" class="text-danger">
+        <div *ngIf="bankForm.get('ifsc_code')?.hasError('required')">IFSC code is required.</div>
+        <div *ngIf="bankForm.get('ifsc_code')?.hasError('pattern')">Please enter a valid IFSC code.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Enter UPI ID</label>
+      <input type="text" class="form-control" formControlName="upi_id">
+      <div *ngIf="bankForm.get('upi_id')?.invalid && (bankForm.get('upi_id')?.dirty || bankForm.get('upi_id')?.touched)" class="text-danger">
+        <div *ngIf="bankForm.get('upi_id')?.hasError('required')">UPI ID is required.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>

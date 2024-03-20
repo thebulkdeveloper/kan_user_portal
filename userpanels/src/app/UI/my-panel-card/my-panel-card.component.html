@@ -1,0 +1,29 @@
+<div class="card w-100 mt-2">
+    <div class="card-body d-flex align-items-center">
+        <img src="{{panel?.imageurl || 'assets/x.png'}}" alt="Logo" class="mr-5">
+        <div class="flex-grow-1 pl-4" style="display: flex; align-items: center">
+            <ul id="cardlist" class="ml-5 pl-4">
+                <li><b>{{panel.title}}</b></li>
+                <li>Username : {{panel.username}}</li>
+                <li>Password : {{panel?.password}}</li>
+                <li>{{panel?.account_type}}</li>
+              <li>{{panel?.t_amount | currency:'INR'}}</li>
+            </ul>
+        </div>
+            <div class="btn-group-sm">
+              <a routerLink="/deposit-withdraw/{{'Deposit'}}/{{panel.id}}" class="btn btn-success rounded-circle">D</a>&nbsp;
+              <a type="button" class="btn btn-warning rounded-circle" routerLink="/deposit-withdraw/{{'Withdraw'}}/{{panel.id}}">W</a>
+            </div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+
+
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="transaction()">Transaction</button>
+                <button mat-menu-item (click)="close()">Close</button>
+              </mat-menu>
+
+    </div>
+</div>
+

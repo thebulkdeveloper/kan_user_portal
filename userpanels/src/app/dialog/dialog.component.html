@@ -1,0 +1,191 @@
+<!-- <h1 mat-dialog-title>My Dialog Title</h1> -->
+<mat-dialog-content>
+    <div *ngIf="data.dataType=='userPanelData'">
+        <div class="row">
+            <div class="col-md-7">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Username:</th>
+                            <td>{{ data.username }}</td>
+                            <th>Password:</th>
+                            <td>{{ data.password }}</td>
+                        </tr>
+                        <tr>
+                            <th>Full Name:</th>
+                            <td>{{ data.name }}</td>
+                            <th>Mobile:</th>
+                            <td>{{ data.mobile }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Amount:</th>
+                            <td>{{ data.cal_amount }}</td>
+                            <th> Title:</th>
+                            <td>{{ data.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Exchange Url:</th>
+                            <td>{{ data.exchange_url}}</td>
+                            <th>Exchange Type:</th>
+                            <td>{{ data.exchange_type }}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Update Before Approve</th>
+                            <td>
+                                <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+                                    <div class="form-group">
+                                        <label for="transactionId">Transaction ID:</label>
+                                        <input type="text" formControlName="transactionId" class="form-control"
+                                            id="transactionId">
+                                        <div *ngIf="transactionForm.get('transactionId')?.hasError('required') && (transactionForm.get('transactionId')?.touched || transactionForm.get('transactionId')?.dirty)"
+                                            class="text-danger">
+                                            Transaction ID is required
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Username:</label>
+                                        <input type="text" formControlName="username" class="form-control"
+                                            id="username">
+                                        <div *ngIf="transactionForm.get('username')?.hasError('required') && (transactionForm.get('username')?.touched || transactionForm.get('username')?.dirty)"
+                                            class="text-danger">
+                                            Username is Required
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" formControlName="password" class="form-control"
+                                            id="password">
+                                        <div *ngIf="transactionForm.get('password')?.hasError('required') && (transactionForm.get('password')?.touched || transactionForm.get('password')?.dirty)"
+                                            class="text-danger">
+                                            Password is required
+                                        </div>
+                                        <div *ngIf="transactionForm.get('password')?.hasError('minlength') && (transactionForm.get('password')?.touched || transactionForm.get('password')?.dirty)"
+                                            class="text-danger">
+                                            Password atleast 6 Character.
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-5">
+                <a href="{{image_url}}" target="_blank">
+                    <img src="{{image_url}}" alt="Payment ss" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="data.dataType=='userRequest'">
+        <div class="row">
+            <!-- Left Part -->
+            <div class="col-md-7">
+                <div class="data-section">
+                    <div class="data-row">
+                        <div class="data-label bold-black">Title:</div>
+                        <div class="data-value">{{ data.title }}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label bold-black">Username:</div>
+                        <div class="data-value">{{ data.username }}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label bold-black">Transaction Type:</div>
+                        <div class="data-value">{{ data.transaction_type }}</div>
+                    </div>
+                    <form [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+
+                        <div class="form-group">
+                            <label for="amount" class="bold-black">Amount</label>
+                            <input type="number" class="form-control" id="amount" formControlName="amount" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="bold-black">Username:</label>
+                            <input type="text" formControlName="username" class="form-control" id="username">
+                            <div *ngIf="depositForm.get('username')?.hasError('required') && (depositForm.get('username')?.touched || depositForm.get('username')?.dirty)"
+                                class="text-danger">
+                                Username is Required
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="bold-black">Password:</label>
+                            <input type="password" formControlName="password" class="form-control" id="password">
+                            <div *ngIf="depositForm.get('password')?.hasError('required') && (depositForm.get('password')?.touched || depositForm.get('password')?.dirty)"
+                                class="text-danger">
+                                Password is required
+                            </div>
+                            <div *ngIf="depositForm.get('password')?.hasError('minlength') && (depositForm.get('password')?.touched || depositForm.get('password')?.dirty)"
+                                class="text-danger">
+                                Password atleast 6 Character.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionId" class="bold-black">Transaction ID:</label>
+                            <input type="text" formControlName="transactionId" class="form-control" id="transactionId">
+                            <div *ngIf="depositForm.get('transactionId')?.hasError('required') && (depositForm.get('transactionId')?.touched || depositForm.get('transactionId')?.dirty)"
+                                class="text-danger">
+                                Transaction ID is required
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+            <!-- Right Part -->
+            <div class="col-md-5">
+                <div *ngIf="data.transaction_type==='Deposit'">
+                    <a href="{{ image_url }}" target="_blank">
+                        <img src="{{ image_url }}" alt="Payment ss" class="img-fluid">
+                    </a>
+                </div>
+                <div *ngIf="data.transaction_type==='Withdraw'">
+                    <div class="data-row bold-black">User Bank Details</div>
+                    <hr>
+                    <div class="data-row">
+                        <div class="data-label bold-black">Bank Name:</div>
+                        <div class="data-value">{{ data.bank_name }}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label bold-black">Account No:</div>
+                        <div class="data-value">{{ data.acc_no }}</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label bold-black">IFSC Code:</div>
+                        <div class="data-value">{{ data.ifsc_code}}</div>
+                    </div> 
+                    <div class="data-row">
+                        <div class="data-label bold-black">UPI ID:</div>
+                        <div class="data-value">{{ data.upi_id}}</div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div *ngIf="data.dataType=='notification'">
+        <div *ngIf="data.length==0">
+            No Notifications !!
+        </div>
+        <div *ngIf="data && data.length>0">
+            <div *ngFor="let notify of data ">
+                <p>Sample Notifcation</p>
+            </div>
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div *ngIf="data.dataType!='notification'">
+        <button type="submit" class="btn btn-success mx-2" (click)="onSubmit()">Approve</button>
+        <button type="button" class="btn btn-danger" (click)="onReject()">Reject</button>
+    </div>
+    <button class="btn btn-secondary mx-2" (click)="onCloseClick()">Close</button>
+</mat-dialog-actions>

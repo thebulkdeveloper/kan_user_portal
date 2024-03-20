@@ -1,0 +1,45 @@
+<div class="panels-container" style="background-color: black;">
+    <div class="tabs">
+      <button *ngFor="let tab of tabs; trackBy: trackByFn"
+              (click)="onTabClick(tab.label)"
+              [ngClass]="{ 'active': activeTab === tab.label }">
+        {{ tab.label }}
+      </button>
+    </div>
+
+    <div [ngSwitch]="activeTab">
+      <div *ngSwitchCase="'My Panels'">
+         <div class="my-panel-component">
+          <div *ngIf="myPanels && myPanels.length > 0; else noPanelFound">
+            <div *ngFor="let panel of myPanels">
+              <app-my-panel-card [panel]="panel"></app-my-panel-card>
+            </div>
+          </div>
+         </div>
+        <ng-template #noPanelFound>
+          <p class="alert alert-warning" role="alert">{{err}}</p>
+        </ng-template>
+      </div>
+
+      <div *ngSwitchCase="'Create Panel'">
+        <div class="search-container">
+          <input type="text" placeholder="Search">
+          <select (change)="onSelectChange()" [(ngModel)]="selectedValue">
+            <option value="All Sites">All Sites</option>
+            <option *ngFor="let item of dropdownData" [value]="item.exchange_type">{{ item.exchange_type }}</option>
+          </select>
+        </div>
+        <div class="panel-components">
+          <div *ngIf="panels && panels.length > 0; else noPanelFound">
+            <div *ngFor="let panel of panels">
+              <app-panelcomponent [panel]="panel"></app-panelcomponent>
+            </div>
+          </div>
+          <ng-template #noPanelFound>
+            <p class="alert alert-warning" role="alert">{{err}}</p>
+          </ng-template>
+          </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,36 @@
+<h2 style="text-align: center"> <u>LIST NEW PANEL</u></h2>
+<form [formGroup]="exchangeForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" class="form-control" formControlName="title">
+    <div *ngIf="isFieldInvalid('title')" class="text-danger">
+      Title is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Exchange URL:</label>
+    <input type="text" class="form-control" formControlName="exchange_url">
+    <div *ngIf="isFieldInvalid('exchange_url')" class="text-danger">
+      Exchange URL is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Amount:</label>
+    <input type="number" class="form-control" formControlName="amount">
+    <div *ngIf="isFieldInvalid('amount')" class="text-danger">
+      Amount is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Exchange Type:</label>
+    <input type="text" class="form-control" formControlName="exchange_type">
+    <div *ngIf="isFieldInvalid('exchange_type')" class="text-danger">
+      Exchange Type is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Image URL:</label>
+    <input type="text" class="form-control" formControlName="imageurl">
+  </div>
+  <button type="submit" class="btn btn-primary mt-3" [disabled]="exchangeForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,68 @@
+<app-special-header [title]="title"></app-special-header> 
+  <header>
+    <div class="container">
+      <h1>Total Amount: {{ formData?.amount || singleCartItem?.cal_amount ||DepositData?.total_coin | currency:'INR'}}</h1>
+    </div>
+  </header>
+
+  <main *ngIf="bankDetails; else userBankDiv">
+    <div class="container">
+      <section class="bank-details" >
+        <h2>Bank Account Details</h2>
+        <div class="row" style="display: flex; align-self: center">
+          <div *ngIf="show_upi && bankDetails.is_master" class="col-12">
+            <div class="container text-center">
+              <img src="{{payment_qr}}" alt="" srcset="" height="150" width="150px">
+            </div>
+          </div>
+          <hr>
+          <div class="col-12">
+            <div class="container text-center">
+              <ul class="list-group list-unstyled p-2" style="border: 1px dotted #d99926">
+                <li>Bank Name : <span>{{bankDetails?.bank_name}}
+                <i class="bi bi-copy" [appCopyText]="bankDetails?.bank_name"></i>
+                </span></li>
+                <li>IFSC Code : <span>{{bankDetails?.ifsc_code}}
+                <i class="bi bi-copy" [appCopyText]="bankDetails?.ifsc_code"></i> 
+                </span></li>
+                <li>Account No : <span>{{bankDetails?.acc_no}}
+                  <i class="bi bi-copy" [appCopyText]="bankDetails?.acc_no"></i> 
+                </span></li>
+              </ul>
+            </div>
+            <hr>
+            <div *ngIf="show_upi" class="container text-center">
+            <ul class="list-group list-unstyled p-2" style="border: 1px dotted #d99926">
+              <li>UPI ID : {{bankDetails?.upi_id}} <i class="bi bi-copy" [appCopyText]="bankDetails?.upi_id"></i> </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="payment-upload" *ngIf="bankDetails.is_master">
+        <h2>Payment Screenshot Upload</h2>
+        <input type="file" (change)="handleImageFile($event)">
+      </section>
+
+      <section class="submit-button d-flex justify-content-center">
+        <form (ngSubmit)="onSubmit()">
+            <button type="submit">Submit</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  
+<ng-template #userBankDiv>
+    <div *ngIf="addUserBank">
+        <app-add-bank [addUserBank]="addUserBank"></app-add-bank>
+    </div>
+</ng-template>
+
+  
+
+
+
+

@@ -1,0 +1,38 @@
+<div class="container">
+    <div style="float: right;">
+        <button (click)="clearCart()" class="btn btn-danger btn-sm mt-2 my-2">Clear All</button>
+        <a routerLink="/panels"><button class="btn btn-warning btn-sm mx-1">Create Panel</button></a>
+    </div>
+    
+    <div *ngIf="cartItems && cartItems.length>0">
+      <div *ngFor="let cart of cartItems">
+        <div class="card w-100 mt-1">
+            <div class="card-body d-flex align-items-center">
+              <img src="{{cart.image}}" alt="Logo" style="margin-top: -15px;">
+              <div class="flex-grow-1">
+                <ul id="cardlist">
+                  <li>{{cart.title}}</li>
+                  <li>{{ cart.exchange_url }} 
+                    <i class="bi bi-copy" [appCopyText]="cart.exchange_url"></i>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span>Amount</span>
+                <div>{{cart.amount| currency:'INR'}}<div>
+                <button class="btn btn-sm btn-outline-danger remove" (click)="removeFromCart(cart.id)">Remove</button>
+                <button class="btn btn-sm btn-outline-success remove" (click)="payNow(cart.id)">Pay Now</button>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div>
+    </div>
+    <ng-template #noCartItems>
+      <p class="alert alert-warning" role="alert">No</p>
+    </ng-template>
+    </div>
+    <div *ngIf="cartItems.length==0"  >
+      <h3 style="text-align:center; color:white;" class="mt-5 bg-dark">No Item Found !</h3>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h2 style="text-align: center"> <u>ALL LISTED PANELS</u></h2>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Exchange URL</th>
+        <th scope="col">Exchange Type</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Operation</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="panels && panels.length>0">
+      <tr *ngFor="let panel of panels">
+        <th scope="row">{{panel.id}}</th>
+        <td>{{panel.title}}</td>
+        <td>{{panel.exchange_url}}</td>
+        <td>{{panel.exchange_type}}</td>
+        <td>{{panel.amount}}</td>
+        <td><button class="btn btn-sm btn-danger" (click)="deletePanel(panel.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="panels.length==0" class="bg-warning">
+    <tr> No panels Created Yet !</tr>
+  </div>

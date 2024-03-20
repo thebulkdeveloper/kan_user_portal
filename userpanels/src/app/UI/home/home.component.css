@@ -1,0 +1,33 @@
+.main{
+    background-color:black;
+    height: 63vh;
+    overflow-y: auto;
+}
+
+.my-panel {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.card-container {
+  display: inline-flex;
+}
+
+.card{
+    margin: 5px;
+    background-color: black;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 80px; /* Adjust this value to position the button vertically */
+  right: 20px; /* Adjust this value to position the button horizontally */
+  z-index: 9999; /* Ensure the button appears on top of other content */
+}
+
+.whatsapp-button img {
+  width: 40px; /* Adjust the size of the WhatsApp icon */
+  height: auto;
+}
+

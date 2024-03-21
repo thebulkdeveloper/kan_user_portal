@@ -24,7 +24,7 @@ export class AddBankComponent {
     this.bankForm = this.fb.group({
       bank_name: ['', Validators.required],
       acc_no: ['', [Validators.required]],
-      ifsc_code: ['', [Validators.required, Validators.pattern('[A-Za-z]{4}[0-9]{7}$')]],
+      ifsc_code: ['', [Validators.required]],
       upi_id: ['', [Validators.required]]
     });
 

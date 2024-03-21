@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 /src/environments/
 __pycache__
+backend_user_panel/.env

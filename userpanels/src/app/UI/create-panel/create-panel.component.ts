@@ -37,7 +37,7 @@ export class CreatePanelComponent {
       panel_id:[{value:null}],
       username: ['', Validators.required],
       password:['password'],
-      amount: [0],
+      amount: ['', [Validators.required, Validators.min(100), Validators.max(100000)]]
    
     });
 
@@ -47,6 +47,11 @@ export class CreatePanelComponent {
       this.registrationForm.get('panel_id')?.setValue(this.panel_id)
     });
 
+  }
+
+
+  get amountField() {
+    return this.registrationForm.get('amount');
   }
 
   fetchProfileData() {
@@ -69,7 +74,6 @@ export class CreatePanelComponent {
   fetchPanelData(id:number){
       this.panelService.getDataById(id).subscribe(data=>{
         this.panelData=data;
-        this.registrationForm.get('amount')?.setValue(this.panelData.amount);
       })
   }
 

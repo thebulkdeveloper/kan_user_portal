@@ -19,7 +19,12 @@
 
     <div class="mb-3">
       <label for="amount" class="form-label">Amount:</label>
-      <input type="text" id="amount" formControlName="amount" class="form-control" readonly>
+      <input type="text" id="amount" formControlName="amount" class="form-control">
+      <div *ngIf="amountField?.invalid && (amountField?.dirty || amountField?.touched)" class="text-danger">
+        <div *ngIf="amountField?.hasError('required')">Amount is required.</div>
+        <div *ngIf="amountField?.hasError('min')">Minimum amount is 100.</div>
+        <div *ngIf="amountField?.hasError('max')">Maximum amount is 100000.</div>
+      </div>
     </div>
 
   </form>

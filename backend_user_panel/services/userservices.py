@@ -51,7 +51,7 @@ async def get_panel_id(pid, db: Session = Depends(get_db),
 
 # Get Panels filtered by types
 async def get_panels_types(db: Session = Depends(get_db)) -> list[MyPanelOut]:
-    try:
+    
         paneltypes = (
             db.query(PanelModel.exchange_type)
             .distinct()
@@ -60,11 +60,8 @@ async def get_panels_types(db: Session = Depends(get_db)) -> list[MyPanelOut]:
         )
         if not paneltypes:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No panel found.")
-        return paneltypes
-    except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
-    finally:
         db.close()
+        return paneltypes
 
 
 # Create Panel

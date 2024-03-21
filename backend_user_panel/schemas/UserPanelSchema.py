@@ -49,6 +49,7 @@ class MyPanelOut(BaseModel):
     username: str
     t_amount: float
     password: str = None
+    exchange_url:str
 
     class Config:
         from_attributes = True

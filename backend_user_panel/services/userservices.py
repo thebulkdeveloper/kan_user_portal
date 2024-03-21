@@ -137,7 +137,7 @@ async def create_panel(
 
 # #Get User MyPanel
 async def get_my_panel(db: Session = Depends(get_db),
-                       current_user=Depends(oauth2.get_current_user)) -> NewPanelOut:
+                       current_user=Depends(oauth2.get_current_user)) -> MyPanelOut:
     user = db.query(User).filter(User.id == current_user.id, User.role == "User").first()
     if user is None:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
@@ -154,7 +154,8 @@ async def get_my_panel(db: Session = Depends(get_db),
         UserPanelModel.isdeleted,
         PanelModel.title,
         PanelModel.imageurl,
-        PanelModel.exchange_type) \
+        PanelModel.exchange_type,
+        PanelModel.exchange_url) \
         .join(PanelModel,
               UserPanelModel.panel_id == PanelModel.id) \
         .filter(UserPanelModel.user_id == current_user.id,

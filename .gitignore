@@ -41,5 +41,22 @@ testem.log
 .DS_Store
 Thumbs.db
 /src/environments/
+
 __pycache__
 backend_user_panel/.env
+
+*.jpg
+*.jpeg
+*.png
+backend/images
+.idea
+.vscode
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

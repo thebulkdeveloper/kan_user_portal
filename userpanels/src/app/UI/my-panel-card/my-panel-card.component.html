@@ -7,7 +7,8 @@
                 <li>Username : {{panel.username}}</li>
                 <li>Password : {{panel?.password}}</li>
                 <li>{{panel?.account_type}}</li>
-              <li>{{panel?.t_amount | currency:'INR'}}</li>
+                <li>{{panel?.t_amount | currency:'INR'}}</li>
+                <a href="{{panel?.exchange_url}}" target="_blank" class="btn btn-sm btn-warning login-btn mt-2">Login</a>
             </ul>
         </div>
             <div class="btn-group-sm">

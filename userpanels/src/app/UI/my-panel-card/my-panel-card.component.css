@@ -1,4 +1,5 @@
 img{
+    margin-top: -50px;
     height: 50px;
     width: 50px;
 }
@@ -24,5 +25,8 @@ img{
 
 }
 
+.login-btn{
+    font-size:smaller;
+}
 
 

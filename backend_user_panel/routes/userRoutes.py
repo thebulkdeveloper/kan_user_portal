@@ -123,7 +123,7 @@ async def get_my_panel_single(pid: int, db: Session = Depends(get_db), current_u
 async def generate_upi_qr(db: Session = Depends(get_db),
                           amount: str = Query(..., description="Amount to be paid"),
                           description: str = Query(..., description="Description of payment")):
-    payment_data = db.execute(text("SELECT * FROM bank_details")).first()
+    payment_data = db.execute(text("SELECT * FROM bank_details WHERE is_master is true")).first()
     if payment_data is None:
         raise HTTPException(
             status_code=status.HTTP_204_NO_CONTENT,

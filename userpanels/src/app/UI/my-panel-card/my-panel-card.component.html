@@ -7,12 +7,14 @@
                 <li>Username : {{panel.username}}</li>
                 <li>Password : {{panel?.password}}</li>
                 <li>{{panel?.account_type}}</li>
-              <li>{{panel?.t_amount | currency:'INR'}}</li>
+                <li>{{panel?.t_amount | currency:'INR'}}</li>
+                
             </ul>
         </div>
             <div class="btn-group-sm">
               <a routerLink="/deposit-withdraw/{{'Deposit'}}/{{panel.id}}" class="btn btn-success rounded-circle">D</a>&nbsp;
               <a type="button" class="btn btn-warning rounded-circle" routerLink="/deposit-withdraw/{{'Withdraw'}}/{{panel.id}}">W</a>
+              <a href="{{panel?.exchange_url}}" target="_blank" class="btn btn-sm btn-warning">Login</a>
             </div>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>

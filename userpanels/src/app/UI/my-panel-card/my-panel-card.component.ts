@@ -11,6 +11,7 @@ export class MyPanelCardComponent {
   @Input() panel: any;
 
   ngOnInit(){
+    console.log(this.panel)
   }
 
   constructor(private router:Router) {

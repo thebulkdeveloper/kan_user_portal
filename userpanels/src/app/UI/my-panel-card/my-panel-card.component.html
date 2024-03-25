@@ -13,19 +13,17 @@
         </div>
             <div class="btn-group-sm">
               <a routerLink="/deposit-withdraw/{{'Deposit'}}/{{panel.id}}" class="btn btn-success rounded-circle">D</a>&nbsp;
-              <a type="button" class="btn btn-warning rounded-circle" routerLink="/deposit-withdraw/{{'Withdraw'}}/{{panel.id}}">W</a>
+              <a type="button" class="btn btn-warning rounded-circle" routerLink="/deposit-withdraw/{{'Withdraw'}}/{{panel.id}}">W</a>&nbsp;
               <a href="{{panel?.exchange_url}}" target="_blank" class="btn btn-sm btn-warning">Login</a>
             </div>
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Toggle menu">
                 <mat-icon>more_vert</mat-icon>
             </button>
-
-
-            <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="transaction()">Transaction</button>
-                <button mat-menu-item (click)="close()">Close</button>
-              </mat-menu>
-
     </div>
 </div>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="transaction()">Transaction</button>
+    <button mat-menu-item (click)="close()">Close</button>
+</mat-menu>
 

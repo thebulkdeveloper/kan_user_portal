@@ -1,17 +1,15 @@
 img{
     height: 50px;
     width: 50px;
+    border-radius: 100%;
 }
 
 #cardlist{
     list-style-type: none;
-    margin-top: -4px;
-    margin-left: -20px;
+    margin-left: -18px;
+    margin-top: 15px;
 }
 
-.card-content{
-    height: 50px;
-}
 
 .card{
     background-color: #343A40;

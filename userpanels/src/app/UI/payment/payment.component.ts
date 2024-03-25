@@ -31,6 +31,7 @@ export class PaymentComponent {
 
   ngOnInit() {
 
+
     this.route.paramMap.subscribe(params => {
 
       if(history.state.depositData){

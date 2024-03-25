@@ -9,11 +9,11 @@ form{
     background-color: #343A40;
 }
 
+
 .container-fluid {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
     background-color: black;
   }
   
@@ -46,4 +46,3 @@ form{
       place-items: center;
     }
   }
-  

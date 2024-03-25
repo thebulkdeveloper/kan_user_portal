@@ -1,14 +1,14 @@
 img{
     height: 50px;
     width: 50px;
+    border-radius: 100%;
 }
 
-.container{
-    background-color: black;
-}
 
 #cardlist{
     list-style-type: none;
+    margin-left: -20px;
+    margin-top: 15px;
 }
 
 
@@ -18,8 +18,9 @@ img{
 }
 
 .container{
-    height: 82vh;
+    height: 80vh;
     overflow-y: auto;
+    background-color: black;
 }
 
 .remove{

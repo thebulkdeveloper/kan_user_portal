@@ -52,11 +52,12 @@
   }
   select {
     padding: 6px;
+    width: 90px;
   }
 
 
   .panel-components {
-    height:68vh;
+    height:70vh;
     overflow-y: auto;
   }
 
@@ -64,3 +65,5 @@
     height:75vh;
     overflow-y: auto;
   }
+
+  

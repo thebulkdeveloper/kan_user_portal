@@ -1,18 +1,14 @@
 <div class="card w-100 mt-1">
       <div class="card-body d-flex align-items-center">
-        <img src="{{panel.imageurl}}" alt="Logo" class="mr-3">
-        <div class="flex-grow-1" style="height: 50px;">
+        <img src="{{panel.imageurl}}" alt="Logo">
+        <div class="flex-grow-1">
           <ul id="cardlist">
             <li>{{panel.title}} ({{panel.exchange_type}})</li>
-            <li>{{ panel.exchange_url }} 
-              <i class="bi bi-copy" [appCopyText]="panel.exchange_url"></i>
-            </li>
-            <li>{{panel.rate}}</li>
+            <li>{{ panel.exchange_url }} <i class="bi bi-copy" [appCopyText]="panel.exchange_url"></i> </li>
           </ul>
         </div>
         <div>
           <a routerLink="/create-panel/{{panel.id}}"><button class="btn btn-sm createBtn">Create</button></a>
-          <!-- <a routerLink="create-panel"></a> -->
         </div>
       </div>
     </div>
